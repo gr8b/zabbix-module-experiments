@@ -1,0 +1,19 @@
+{
+	"manifest_version": 1,
+	"id": "zme",
+	"name": "EAE",
+	"author": "",
+	"description": "Experiments and examples module. Do not use in production.",
+	"version": "1.0",
+	"namespace": "Experiments",
+	"url": "https://git.zabbix.com/projects/FTLD/repos/modules/browse",
+	"require": {
+        "zabbix": "^5.0"
+    },
+	"actions": {
+		"menu.popup": {
+			"class": "MenuPopupExtendedAction",
+			"layout": "layout.json"
+		}
+	}
+}
