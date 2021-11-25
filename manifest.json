@@ -6,7 +6,7 @@
 	"description": "Experiments and examples module. Do not use in production.",
 	"version": "1.0",
 	"namespace": "Experiments",
-	"url": "https://git.zabbix.com/projects/FTLD/repos/modules/browse",
+	"url": "https://github.com/gr8b/zabbix-module-experiments.git",
 	"require": {
         "zabbix": "^5.0"
     },
