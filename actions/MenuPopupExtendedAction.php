@@ -26,17 +26,23 @@ class MenuPopupExtendedAction extends CControllerMenuPopup {
 			'url_c' => 'URL C'
 		];
 		$host = API::Host()->get([
-			'output' => null,
+			'output' => ['hostid', 'name', 'host', 'description'],
 			'hostids' => [$input['hostid']],
 			'selectInventory' => array_keys($field_label)
 		]);
 		$host = reset($host);
 		$field_label = array_intersect_key($field_label, array_filter($host['inventory'], 'strlen'));
+		$host_macro = [
+			'{HOST.ID}' => $host['hostid'],
+			'{HOST.NAME}' => $host['name'],
+			'{HOST.HOST}' => $host['host'],
+			'{HOSTNAME}' => $host['host']
+		];
 
 		foreach ($field_label as $field => $label) {
 			$main_block['data']['urls'][] = [
 				'label' => $label,
-				'url' => $host['inventory'][$field]
+				'url' => strtr($host['inventory'][$field], $host_macro)
 			];
 		}
 
